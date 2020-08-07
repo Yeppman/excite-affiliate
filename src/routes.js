@@ -21,6 +21,9 @@ const BaseRouter = () => (
     <Hoc>
       <Route exact path="/login" component={Login} /> {" "}
       <Route exact path="/register" component={Register} />  {" "}
+      <Route exact path="/">
+        <Redirect to="/dashboard" />
+    </Route>
       <Route exact path="/dashboard" component={Main} />  {" "}
       <Route exact path="/add-to-list" component={AddUser} />  {" "}
       <Route exact path="/create-user" component={CreateUser} />{" "}
