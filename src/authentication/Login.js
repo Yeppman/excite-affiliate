@@ -35,6 +35,7 @@ class Login extends React.Component {
       password : values['password']
     })
     this.props.login(username, password)
+    this.history.push('/dashboard')
   }
 
   openNotification = (msg) => {
@@ -50,7 +51,7 @@ class Login extends React.Component {
     const { username, password } = this.state;
     if (token) {
       this.openNotification('Login Successful')
-      return <Redirect to="/" />;
+      return <Redirect to="/dashboard" />;
     }
     const formItemLayout = {
       wrapperCol: { span: 12, offset: 6 }

@@ -33,13 +33,13 @@ class TempoaryDrawer extends React.Component{
               <div  className = "menu-link">
                 <MenuItem 
                     className="menu-link-text"
-                    component={Link} to="/" >
+                    component={Link} to="/dashboard" >
                     Dashboard
                 </MenuItem>
               </div>
           </MenuList>
 
-          <MenuList>
+          {/* <MenuList>
               <div  className = "menu-link">
                 <MenuItem 
                     className="menu-link-text"
@@ -47,7 +47,7 @@ class TempoaryDrawer extends React.Component{
                     Register a user
                 </MenuItem>
               </div>
-          </MenuList>
+          </MenuList> */}
 
           <MenuList>
               <div  className = "menu-link">

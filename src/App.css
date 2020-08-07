@@ -378,3 +378,26 @@ border-radius: 3px;
 .create-list{
   margin-top: 20px;
 }
+
+.see-more{
+  padding-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.register-button {
+  background: #f1ee08;
+  color: rgb(0, 0, 0);
+  width: 150px;
+  height: 58px;
+  margin-left: 5px;
+  font-size: 20px;
+  font-size: 1000;
+}
+
+.base-card{
+  width: 100%;
+}

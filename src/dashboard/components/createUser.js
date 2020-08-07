@@ -38,6 +38,8 @@ class CreateUser extends React.Component {
       console.log(password1);
       console.log(password2);
       let is_buyer = false;
+      let is_seller;
+      let is_marketer;
       if (values.option === "buyer") is_buyer = true;
       const user = {
         username,
@@ -45,7 +47,9 @@ class CreateUser extends React.Component {
         password1,
         password2,
         is_buyer,
-        is_seller: !is_buyer
+        is_seller: !is_buyer,
+        is_marketer: true,
+        
       };
       console.log(user);
       axios
@@ -61,26 +65,16 @@ class CreateUser extends React.Component {
           };
           localStorage.setItem("user", JSON.stringify(user));
           console.log(user);
-          this.props.history.push("/")
+          this.props.history.push("/dashboard")
           window.location.reload();
-
         //  dispatch(authSuccess(user));
           //dispatch(fetchCart())
         //  dispatch(checkAuthTimeout(3600));
         })
         .catch(err => {
-        //  dispatch(authFail(err));
         console.log(err);
         });
-      // console.log(is_buyer);
-      // this.props.Signup(
-      //   values.userName,
-      //   values.email,
-      //   values.password,
-      //   values.confirm,
-      //   is_buyer
-      // );
-//      this.props.history.push("/");
+
 
   };
 
@@ -168,14 +162,13 @@ return (
                                   />
                               </Form.Item>
 
-
+                              
                               <Form.Item label="Option" name="option" rules={[{ required: true }]}>
-                                <Select >
-                                    <Select.Option value="buyer">Buyer</Select.Option>
-                                    <Select.Option value="seller">Vendor</Select.Option>
-                                    <Select.Option value="marketer">Marketer</Select.Option>
+                                <Select placeholder="marketer" >
+                                   
+                                    <Select.Option default value="marketer">Marketer</Select.Option>
                                 </Select>
-                            </Form.Item>
+                            </Form.Item>S
 
                         <Form.Item >
                         <button class="create-button" htmlType="submit">

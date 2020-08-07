@@ -1,33 +1,33 @@
 import React from 'react'
 import Logo from '../../assets/img/ExciteLogo.png'
 
-export default function Nav() {
+export default function featureNav() {
     return (
         <header>
             <div>                
-                <ul className="nav-content">
-                    <div className="nav-left">
-                        <li className="nav-list-logo">
+                <ul className="featureNav-content">
+                    <div className="featureNav-left">
+                        <li className="featureNav-list-logo">
                         <img
                               className="logo"
                               src={Logo} /> 
                         </li>
-                        <li className="nav-list">
-                            <span className="nav-item">News</span>
+                        <li className="featureNav-list">
+                            <span className="featureNav-item">News</span>
                         </li>
-                        <li className="nav-list">
-                            <span className="nav-item">Contact</span>
+                        <li className="featureNav-list">
+                            <span className="featureNav-item">Contact</span>
                         </li>
                     </div>
-                    <div className="nav-right">        
-                        <li className="nav-list" >
-                            <span className="nav-item"className="nav-item">Sell on excite</span>
+                    <div className="featureNav-right">        
+                        <li className="featureNav-list" >
+                            <span className="featureNav-item"className="featureNav-item">Sell on excite</span>
                         </li>        
-                        <li className="nav-list" >
-                            <span className="nav-item">Login</span>
+                        <li className="featureNav-list" >
+                            <span className="featureNav-item">Login</span>
                         </li>
-                        <li className="nav-list-button">
-                            <button className="nav-button">
+                        <li className="featureNav-list-button">
+                            <button className="featureNav-button">
                                 Get started on Excite
                             </button>
                         </li>

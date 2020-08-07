@@ -7,6 +7,8 @@ const initialState = {
   username: null,
   is_buyer: null,
   is_seller: null,
+  is_marketer: null,
+  affiliate_link:null,
   userId: null,
   error: null,
   loading: false

@@ -50,7 +50,10 @@ export const registerUser = (
   email,
   password1,
   password2,
-  is_buyer
+  is_buyer,
+  is_seller,
+  is_marketer,
+  affiliate_link
 ) => {
   return dispatch => {
     dispatch(authStart());
@@ -61,7 +64,8 @@ export const registerUser = (
       password2,
       is_buyer,
       is_seller: !is_buyer,
-      is_marketer: !is_buyer
+      is_marketer: !is_buyer,
+      affiliate_link
     };
     axios
       .post("http://127.0.0.1:8000/rest-auth/registration/", user)
@@ -73,6 +77,7 @@ export const registerUser = (
           is_buyer,
           is_seller: !is_buyer,
           is_marketer: !is_buyer,
+          affiliate_link,
           expirationDate: new Date(new Date().getTime() + 3600 * 1000)
         };
         // localStorage.setItem("user", JSON.stringify(user));

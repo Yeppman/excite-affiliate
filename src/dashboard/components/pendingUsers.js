@@ -53,6 +53,8 @@ class PendingUsers extends Component {
                 <SideDrawer />
                 <div className="main">
                      <div className="fluid-container">
+
+                        <h1>Pending Users</h1>
                         <PendingUserTable data={user_list} />
                      </div>
                 </div>

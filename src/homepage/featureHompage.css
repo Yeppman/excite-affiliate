@@ -7,108 +7,6 @@
 }
 
 
-.nav-content {
-    list-style-type: none;
-    /* width: 1920px; */
-    height: 100px;
-    overflow: visible;
-    overflow: hidden;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: 0 4px 2px -2px rgb(204, 199, 199);
-  
-    }
-
-  .nav-left{
-    margin-left: 100px;
-  }
-  .nav-right  {
-    float: right;
-    margin-right: 100px;
-  }
-  
-  .logo {
-    width: 90px;
-    height: 63px;
-  }
-
-  .nav-list-logo {
-    float: left;
-    border-right:1px solid #bbb;
-    /* display: block; */
-    color: rgb(0, 0, 0);
-    text-align: center;
-    /* padding: 14px 16px; */
-    height: 100px;
-    text-decoration: none;
-    padding-top: 20px;
-    padding-right: 20px;
-  }
-
-  .nav-list {
-    float: left;
-    border-right:1px solid #bbb;
-    /* display: block; */
-    color: rgb(0, 0, 0);
-    text-align: center;
-    /* padding: 14px 16px; */
-    height: 100px;
-    text-decoration: none;
-    padding-top: 40px;
-  }
-
-  .nav-item{
-    padding-top: 200px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    }
-  
-  .nav-list:last-child {
-    border-right: none;
-  }
-/*   
-  .nav-list:hover:not(.active) {
-    background-color: #111;
-  } */
-  
-  .active {
-    background-color: #4CAF50;
-  }
-  
-
-
-  .nav-button{
-    background-color: rgb(34, 177, 34); /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px 10px 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-  }
-
-  .nav-list-button {
-    float: right;
-    height: 100px;
-    padding-top: 20px;
-  }
-
-
-  /*  */
-
-/* CSS Variables */
-:root {
-  --primary: #ddd;
-  --dark: #333;
-  --light: #fff;
-  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
-
-
 .featureNav-content {
     list-style-type: none;
     /* width: 1920px; */
@@ -178,6 +76,8 @@
     background-color: #4CAF50;
   }
   
+
+
   .featureNav-button{
     background-color: rgb(34, 177, 34); /* Green */
     border: none;
@@ -197,7 +97,6 @@
     padding-top: 20px;
 
 }
-
 
 .search-box-section {
     margin-top: 20px;
@@ -253,12 +152,6 @@
 
 }
 
-.product-fluid-container{
-  margin: 30px 60px;
-
-  padding: 0px 120px 0px 120px;
-}
-
 .product-heading{
     font-size: 2rem;
     padding-left: 20px;
@@ -267,7 +160,7 @@
 
 .p-container{
     display: grid;
-    /* grid-gap: 20px; */
+    grid-gap: 20px;
     /* padding:100px; */
     padding-left: 20px;
     padding-right: 20px;
@@ -295,10 +188,6 @@
     height: 175px;
     margin: 0 auto;
   }
-
-.p-image img{
-  height: inherit;
-}
 
  .p-info-2{
      padding:20px;
@@ -348,7 +237,7 @@
   grid-template-columns:  repeat(2, 1fr);
   margin-top: 20px;
   padding: 10px 0px 10px 0px;
-  height: 500px;
+ 
   /* border: 1px solid #ccc; */
 
 }
@@ -419,8 +308,6 @@
   height: 58px;
   margin-left: 5px;
   font-size: 1.1rem;
-
-
   font-size: 100;
 }
 

@@ -12,6 +12,8 @@ class Main extends Component {
       data: ''
     }
 
+    
+
     getUserAffiliate = (token) => {
       axios.defaults.headers = {
         "Content-Type": "application/json",
@@ -43,6 +45,19 @@ class Main extends Component {
       }
 
     render() {
+
+      const {usersTotal,WebhookTotal, ordersCount , 
+        CampaignsData, Transactions ,Profiles ,CampaignDataCount ,productsCost , productsCount} = this.state
+      const AllowAdmin  = true
+          
+      const {isAuth} = this.props
+  
+      if (isAuth === false){
+        window.location.replace("/login")
+      }else{
+        let AllowAdmin  = true
+      }
+
       const {data} = this.state
       console.log(data);
       const a = new Set(data)
@@ -64,6 +79,8 @@ class Main extends Component {
                         </button>
                     </a>
                   </div>
+
+
                  </div>
               </div>  
             </>

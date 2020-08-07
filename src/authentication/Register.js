@@ -1,8 +1,10 @@
 import React from "react";
+import axios from 'axios'
 import { Form, Input, Select, message, notification } from "antd";
 import { Link, NavLink, Redirect } from "react-router-dom";
 //import { MessageOutlined,  LikeOutlined, StarOutlined } from '@ant-designs';
 import { connect } from "react-redux";
+import Logo from '../assets/img/ExciteLogo.png'
 
 import * as actions from "../store/actions/auth";
 
@@ -18,57 +20,51 @@ const openNotification = (msg) => {
 
 
 class RegistrationForm extends React.Component {
-  state = {
-    confirmDirty: false
-  };
+ 
 
-  handleSubmit = (values )=> {
+  handleSubmit = (values) => {
 
-    const form_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-    const password_1 = values['password']
-    const password_2 = values['password2']
-    
-    if (password_1.match(form_regex)){
-            
-          if (password_1 != password_2){
-            message.error('Your Passwords don`t match')
-        }
-        else if(password_1 && password_2 <= 8){
-          message.error('Your Passwords must not be lesser than 8 letters')
-        }
-        
-        else{
-          var email_regex= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-          const email = values['email']
-          if (email.match(email_regex)){
-            //Email Validation passes
-            let is_buyer = false
-            if (values['userType']  === "buyer"){
-              is_buyer = true
-              } 
-            this.props.onAuth(
-              values['username'],
-              values['email'] ,
-              values['password'],
-              values['password2'],
-              is_buyer
-            );
-            openNotification('Account created successfully')
-            this.props.history.push("/setup-profile/");
-          }else{
-            //Email validation verifies its wrong
-            message.error('Please enter a valid email adress')
-          }
+    const username = values['username']
+    const email = values['email']
+    const password1 = values['password']
+    const password2 = values['confirm']
+    const option = values['option']
+    let is_marketer ;
+    console.log(username);
+    console.log(option);
+    console.log(password1);
+    console.log(password2);
+    let is_buyer = false;
+    if (values.option === "buyer") is_buyer = true;
+    const user = {
+      username,
+      email,
+      password1,
+      password2,
+      is_buyer,
+      is_seller: !is_buyer,
+      is_marketer: true
+    };
+    console.log(user);
+    axios
+      .post('http://127.0.0.1:8000/rest-auth/registration/', user)
+      .then(res => {
+        const user = {
+          token: res.data.key,
+          username,
+          userId: res.data.user,
+          is_buyer,
+          is_seller: !is_buyer,
+          is_marketer: true,
+          expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+        console.log(user);
+        this.props.history.push("/dashboard")
+        window.location.reload();
 
-      }
-
+      })
     }
-    else{
-      message.error('Your Passwords must contain at least one Uppercase \n one special character \n and one numeric digit ')
-    }
-  
-  };
-
 
   render() {
    
@@ -80,18 +76,48 @@ class RegistrationForm extends React.Component {
             
           <>
 
-      <ExciteNav/>
+<div className="access-form-layout">
+                            <div className="access-form-image">
+                              <div className="access-form-bg-image">
+                                <div className="access-header-intro">
+                                    <h3>
+                                      Excite Enterprise
+                                    </h3>
+                                    <p>
+                                      We Grow SMEs
+                                    </p>
+                                </div>
+                              </div>
+                            </div>
 
-        <div className="fitter">
-               <div className="form-container">
-                <div className="form-box">
-                
-                <div className="login-welcome-intro">
-                              <h3>
-                                Welcome To Excite Enterprise 
-                              </h3>
-                   </div>
+                            <div className="access-form-box">
+                            <nav className="access-main-nav">
+                                  <ul>
+                                    <li>
+                                      <Link to="/">
+                                      <div className="ExciteLogoContainer">
+                                      <img
+                                      className="ExciteLogo"
+                                      src={Logo} /> 
+                                      </div>
+                                      </Link>
+                                    </li>
+                                  
+                                  </ul>
+                                </nav>
 
+                            <div className="form-box">
+
+                                      <div className="login-welcome-intro">
+                                                      <h3>
+                                                      Affiliate marketing
+                                                      </h3>
+        
+                                              </div>
+
+
+
+                                          
                 <Form className="form-box-width"
                 {...formItemLayout}
                 onFinish={this.handleSubmit}>
@@ -134,7 +160,7 @@ class RegistrationForm extends React.Component {
 
         <FormItem 
         rules={[{ required: true, message:'You need to confirm your password' }]}
-        name = "password2">
+        name = "confirm">
           
             <Input.Password
               prefix
@@ -157,19 +183,7 @@ class RegistrationForm extends React.Component {
          
         </FormItem>
 
-        
-        
-        <FormItem
-       
-        >
-          
-            <Input
-              prefix
-              placeholder="Affliate Code (Optional)"
-            />
-        
-        </FormItem>
-
+      
         <Form.Item >
         <button
               class="form-button"
@@ -187,11 +201,13 @@ class RegistrationForm extends React.Component {
                     
            </div>
 
-                </div>
-          </div>
-            </div>
+                                        
 
-          <NewFooter/>
+
+                                      </div>
+                           
+                            </div>
+                </div>
 
           </>
 

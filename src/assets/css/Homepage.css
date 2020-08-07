@@ -1,0 +1,190 @@
+/* Inline Display Category Boxes Ends here */
+
+.productCategoryBoxes ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .productCategoryBoxes li{
+   
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  
+  }
+  
+  .productCategoryBoxes li .productCategoryBoxes-sections{
+    /* background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595215708/contentservice/5.jpg_SkEPyqGgw.jpg'); */
+    border: 1px solid #ccc;
+    box-shadow: 0 0px 0px rgba(104, 104, 104, 0.8);
+    padding: 20px;
+    font-size: 1rem;
+    height: 200px;
+    text-align: center;
+    border-radius: 16px;
+    
+  }
+
+  .p-cat-1{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250099/contentservice/PromoCards4.jpg_SyP2HfXlD.jpg');
+
+  }
+
+  .p-cat-2{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250184/contentservice/PromoCards2.jpg_H1gMUzXlD.jpg');
+  }
+   
+  .p-cat-3{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250090/contentservice/PromoCards1.jpg_BkfhrfQlD.jpg');
+  }
+
+  .p-cat-4{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250091/contentservice/PromoCards2.jpg_HyM3rfmxw.jpg');
+  }
+  /* Inline Display Category Boxes  for component */
+  
+  /* Inline Display Category Boxes */
+  
+  .popularCategories-intro-bar{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .popularCategories-intro-bar{
+      display: block;
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    height:45px;
+    background-color: rgb(56, 54, 54);
+    
+  }
+  
+  .popularCategories-intro-bar p{
+    color:white;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 0px;
+  
+  }
+  
+  .popularCategories ul {
+    display: grid;
+    grid-gap: 20px;
+    padding:0;
+    margin: 20px 0px 0px 0px;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .popularCategories li{
+   
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  
+  }
+  
+   
+  .popularCategories li .popularCategories-sections{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_600,f_auto,fl_lossy,dpr_auto,q_auto/v1595215708/contentservice/5.jpg_SkEPyqGgw.jpg');
+    border: 1px solid #ccc;
+    box-shadow: 0 0px 0px rgba(104, 104, 104, 0.8);
+    padding: 20px;
+    font-size: 1rem;
+    height: 200px;
+    text-align: center;
+    border-radius: 16px;
+
+    
+  }
+   
+  .popularCategories li .productCategoryBoxes-sections .electronics{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250184/contentservice/PromoCards2.jpg_H1gMUzXlD.jpg');
+    
+  }
+
+  .popularCategories li .services{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1595250099/contentservice/PromoCards4.jpg_SyP2HfXlD.jpg');
+ 
+  }
+
+  .productCategoryBoxes li .fashion{
+    background-image: url('https://www-konga-com-res.cloudinary.com/image/upload/w_600,f_auto,fl_lossy,dpr_auto,q_auto/v1572956060/v3_homepage/categories/categoryBanners_Fashion.png');
+   
+  }
+
+  
+  /* Inline Display Category Boxes  */
+  
+
+/* Regitser Now */
+
+.signUp-section{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+.signUp-section .signUp-field{
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    /* background-color: rgb(56, 54, 54); */
+}
+
+.signUp-section .signUp-field .signUp-container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    
+}
+
+.signUp-section .signUp-field h3{
+    font-size: 64px;
+    text-align: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.signUp-section  .signUp-field .signUp-button{
+    text-align: center;
+    background-color: #fbff16;
+    border-color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    width: 200px;
+    height: 48px;
+    color: rgb(0, 0, 0);
+    padding: 0px 0px 0px 0px;
+    
+    margin:0px 0px 30px 0px;
+    border-radius: 5px;
+}
+/* Register Now ends here */
