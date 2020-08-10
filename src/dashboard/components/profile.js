@@ -48,7 +48,7 @@ class MarketerProfile extends Component {
                 "Content-Type": "application/json",
                 Authorization: `Token ${this.props.token}`
             };
-           axios.post(`https://backend-entr.herokuapp.com/affiliate/edit-profile/`,fd)
+           axios.post(`http://127.0.0.1:8000/affiliate/edit-profile/`,fd)
             .then(res =>{
               this.props.history.push('/dashboard')
               this.openNotification('Profile edited successfully')             

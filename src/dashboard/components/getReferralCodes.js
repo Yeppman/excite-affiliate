@@ -15,7 +15,7 @@ class FetchReferralCodes extends Component {
             "Content-Type": "application/json",
             Authorization: `Token ${token}`
           };
-        axios.get('https://backend-entr.herokuapp.com/affiliate/get-ref-codes/').then(res =>{
+        axios.get('http://127.0.0.1:8000/affiliate/get-ref-codes/').then(res =>{
             if (res.status == 200){
                 this.setState({
                   data:res.data
@@ -29,7 +29,7 @@ class FetchReferralCodes extends Component {
             "Content-Type": "application/json",
             Authorization: `Token ${token}`
           };
-       await axios.get('https://backend-entr.herokuapp.com/affiliate/generate-code').then(res =>{
+       await axios.get('http://127.0.0.1:8000/affiliate/generate-code').then(res =>{
             if (res.status == 200){
                 this.handleGetCodes(token)    
           }

@@ -16,7 +16,7 @@ class AllAffiliates extends Component {
           "Content-Type": "application/json",
           Authorization: `Token ${token}`
         };
-        axios.get('https://backend-entr.herokuapp.com/affiliate/get-all-affiliates/')
+        axios.get('http://127.0.0.1:8000/affiliate/get-all-affiliates/')
         .then(res => {
             if (res.status == 200){
               this.setState({

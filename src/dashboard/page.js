@@ -17,7 +17,7 @@ import PendingUsers from './components/pendingUsers';
     //       "Content-Type": "application/json",
     //       Authorization: `Token ${token}`
     //     };
-    //     axios.get('https://backend-entr.herokuapp.com/affiliate/get-affiliates/')
+    //     axios.get('http://127.0.0.1:8000/affiliate/get-affiliates/')
     //     .then(res => {
     //         if (res.status == 200){
     //           this.setState({
