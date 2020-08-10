@@ -16,7 +16,7 @@ class AffDetail extends Component {
               "Content-Type": "application/json",
               Authorization: `Token ${token}`
             };
-          axios.get(`http://127.0.0.1:8000/affiliate/${this.affiliate_id}/`)
+          axios.get(`https://backend-entr.herokuapp.com/affiliate/${this.affiliate_id}/`)
           .then(res =>{
              this.setState({
                  data: res.data

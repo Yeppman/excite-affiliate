@@ -12,7 +12,7 @@ import {MenuItem, MenuList} from '@material-ui/core'
 // import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const host = 'http://127.0.0.1:8000'
+const host = 'https://backend-entr.herokuapp.com'
 
 class TempoaryDrawer extends React.Component{
     render(){

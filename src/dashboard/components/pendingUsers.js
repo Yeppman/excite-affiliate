@@ -16,7 +16,7 @@ class PendingUsers extends Component {
           "Content-Type": "application/json",
           Authorization: `Token ${token}`
         };
-        axios.get('http://127.0.0.1:8000/affiliate/get-pending-users/')
+        axios.get('https://backend-entr.herokuapp.com/affiliate/get-pending-users/')
         .then(res => {
             if (res.status == 200){
               this.setState({

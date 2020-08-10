@@ -101,7 +101,7 @@ class RegisterUser extends React.Component {
         "Content-Type": "application/json",
         Authorization: `Token ${token}`
       };
-    axios.get('http://127.0.0.1:8000/affiliate/get-ref-codes/').then(res =>{
+    axios.get('https://backend-entr.herokuapp.com/affiliate/get-ref-codes/').then(res =>{
         if (res.status == 200){
             this.setState({
               referral_codes:res.data

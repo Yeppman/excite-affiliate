@@ -39,7 +39,7 @@ class AddUser extends Component {
             //     "Content-Type": "application/json",
             //     Authorization: `Token ${this.props.token}`
             // };
-           axios.post(`http://127.0.0.1:8000/affiliate/add-to-list/`,fd)
+           axios.post(`https://backend-entr.herokuapp.com/affiliate/add-to-list/`,fd)
             .then(res =>{
               this.props.history.push('/pending-user-list')
             //   openNotification('Profile edited successfully')             
