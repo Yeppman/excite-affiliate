@@ -51,7 +51,7 @@ class Login extends React.Component {
     const { username, password } = this.state;
     if (token) {
       this.openNotification('Login Successful')
-      return <Redirect to="/dashboard" />;
+      return <Redirect to="/" />;
     }
     const formItemLayout = {
       wrapperCol: { span: 12, offset: 6 }
