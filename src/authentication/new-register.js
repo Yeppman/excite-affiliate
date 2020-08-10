@@ -81,7 +81,7 @@ class RegistrationForm extends React.Component {
             };
             // localStorage.setItem("user", JSON.stringify(user));
             console.log(user);
-            this.props.history.push("/dashboard")
+            this.props.history.push("/")
             // window.location.reload();
         //  dispatch(authSuccess(user));
             //dispatch(fetchCart())

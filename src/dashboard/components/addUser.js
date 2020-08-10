@@ -41,7 +41,7 @@ class AddUser extends Component {
             // };
            axios.post(`http://127.0.0.1:8000/affiliate/add-to-list/`,fd)
             .then(res =>{
-              this.props.history.push('/dashboard')
+              this.props.history.push('/pending-user-list')
             //   openNotification('Profile edited successfully')             
           })
         //   .catch(e =>{
