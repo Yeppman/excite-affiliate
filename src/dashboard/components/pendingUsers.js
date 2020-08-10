@@ -3,6 +3,7 @@ import axios from "axios";
 import PendingUserTable from '../tables/user-list-table'
 import SideDrawer from '../Sidebar/SideNav'
 import { connect } from 'react-redux';
+import SideNav from '../Sidebar/SideNav';
 
 class PendingUsers extends Component {
 
@@ -15,7 +16,7 @@ class PendingUsers extends Component {
           "Content-Type": "application/json",
           Authorization: `Token ${token}`
         };
-        axios.get('http://127.0.0.1:8000/affiliate/get-pending-users/')
+        axios.get('https://backend-entr.herokuapp.com/affiliate/get-pending-users/')
         .then(res => {
             if (res.status == 200){
               this.setState({
@@ -50,14 +51,13 @@ class PendingUsers extends Component {
         console.log(user_list);
         return (
             <>
-                <SideDrawer />
-                <div className="main">
-                     <div className="fluid-container">
-
-                        <h1>Pending Users</h1>
-                        <PendingUserTable data={user_list} />
-                     </div>
-                </div>
+                  <SideNav />
+                  <div className="main">
+                    <div className="fluid-container">
+                      <h1>List of buisness</h1>
+                      <PendingUserTable  data={user_list} />
+                    </div>
+                  </div>
             </>
         )
     }

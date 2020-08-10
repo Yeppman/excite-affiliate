@@ -14,9 +14,17 @@ const initialState = {
   loading: false
 };
 
+const handleGetCodes = (state, action) => {
+  return updateObject(state, {
+    affiliate_link: action.user_list.link,
+    error: null,
+    loading: true
+  })
+}
+
 const getAffliateUsers = (state, action) => {
     return updateObject(state, {
-      data: action.user_list,
+      // affiliate_link: action.user_list.link,
       error: null,
       loading: true
     });
@@ -26,10 +34,13 @@ const affiliateReducer = (state = initialState, action) => {
     switch (action.type) {
       case actionTypes.AFFILIATE_GET_USERS_SUCCESS:
         return getAffliateUsers(state, action);
+      case actionTypes.AFFILIATE_GET_USERS_SUCCESS:
+        return handleGetCodes(state, action);
       default:
         return state;
     }
   };
   
-  export default affiliateReducer;
-  
+
+
+export default affiliateReducer;

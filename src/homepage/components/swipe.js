@@ -1,5 +1,5 @@
 import React from 'react'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay,Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -9,7 +9,8 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
-SwiperCore.use([Navigation, Pagination]);
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function Swipe() {
     return (
@@ -18,10 +19,9 @@ export default function Swipe() {
             <div className="swiper-container">
     <Swiper
       spaceBetween={0}
-    //   slidesPerView={3}
-    //   navigation
+      autoplay
+
       pagination={{ clickable: true }}
-    //   scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >

@@ -447,3 +447,79 @@
 }
 
 
+.top-info-card{
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(3,1fr);
+  margin-bottom: 50px;
+
+}
+
+.top-info-content{
+  border: 2px solid #ccc;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  text-align: right;
+  background-color: #069b26;
+  padding: 20px;
+}
+.top-info-content h3, p{
+  color: rgb(255, 255, 255);
+}
+
+
+.user-count{
+  border: 1px solid green;
+}
+
+.referral-button{
+  background: #0a9929;
+  color: #fff;
+  width: 50%;
+  height: 58px;
+  margin-left: 5px;
+  font-size: 20px;
+  font-size: 1000;
+}
+
+.m-t-10{
+  margin-top: 10px;
+}
+
+.section-register-user{
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(2,1fr);
+  margin-bottom: 50px;
+}
+
+.create-user-form{
+  border: 1px solid rgb(114, 114, 114);
+  padding: 10px;
+  box-shadow: 2px 5px 11px 0 hsla(0,0%,91%,.79)
+}
+
+.referral-code-box {
+  color: black;
+}
+
+.referral-card {
+  color: black;
+}
+
+.r-text-black{
+  color: black;
+}
+
+.r-codes-links{
+  font-size: 1.3rem;
+}
+
+.form-box-w{
+  width: 100%;
+}

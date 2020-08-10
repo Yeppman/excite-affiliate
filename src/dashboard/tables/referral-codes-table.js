@@ -27,40 +27,31 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function SimpleTable(props) {
+export default function ReferralCodesTable(props) {
   const classes = useStyles();
-  console.log(props.aff);
+  console.log(props.data);
 
   return (
 
       <>
-      <div>
-          <h2>Affiliated Accounts</h2> <hr />
-      </div>
+
       <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="left">Username</TableCell>
-            <TableCell align="left">Email</TableCell>
-            <TableCell align="left">Date Registered</TableCell>
-            <TableCell align="left">Open</TableCell>
-          </TableRow>
+            <TableCell>id </TableCell>
+            <TableCell align="left">code</TableCell>
+            <TableCell align="left">Date Created</TableCell>
+         </TableRow>
         </TableHead>
         <TableBody>
-          {props.aff.map((row) => (
+          {props.data.map((row) => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.username}
+                {row.id} 
               </TableCell>
-              <TableCell align="left">{row.email}</TableCell>
-              <TableCell align="left">{row.registered_date}</TableCell>
-              <TableCell align="left">{row.refferal_code}</TableCell>
-              <TableCell align="left">
-                <Link to={`/user-detail/${row.id}/`}>
-                  Open 
-                </Link>
-              </TableCell>
+              <TableCell align="left">{row.link}</TableCell>
+              <TableCell align="left">2020-08-08</TableCell>
             </TableRow>
           ))}
         </TableBody>

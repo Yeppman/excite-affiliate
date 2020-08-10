@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
-import axios from "axios";
-import { connect } from "react-redux"; 
+import axios from 'axios'
+import { connect } from "react-redux";
+import SideNav from '../Sidebar/SideNav'
 import {Input ,Select , Form, Button ,notification} from 'antd';
-import SideNav from '../Sidebar/SideNav';
 
 
-class AddUser extends Component {
+class MarketerProfile extends Component {
 
+    openNotification = (msg) => {
+        notification.open({
+          message: 'Alert!',
+          description:msg,
+          
+        });
+      }
+    
     handleSubmit = (values, err) => {
+
         const fName =  
         values["fName"] === undefined ? null : values["fName"] ;
 
@@ -17,8 +26,8 @@ class AddUser extends Component {
         const businessName = 
             values['businessName'] === undefined ? null : values['businessName'] ;
             
-        const businessAddress = 
-        values['businessAddress'] === undefined ? null : values['businessAddress'] ;
+        // const businessAddress = 
+        // values['businessAddress'] === undefined ? null : values['businessAddress'] ;
         
         const emailAddress = 
         values['emailAddress'] === undefined ? null : values['emailAddress'] ;    
@@ -27,22 +36,22 @@ class AddUser extends Component {
         values['phoneNum'] === undefined ? null : values['phoneNum']
 
         const fd  = new FormData()
-        fd.append('fName', fName);
-        fd.append('lName',lName);
-        fd.append('business_name', businessName);
-        fd.append('business_address', businessAddress);
-        fd.append('email', emailAddress);
-        fd.append('phone', phoneNum)
+        fd.append('FirstName', fName);
+        fd.append('LastName',lName);
+        fd.append('BusinessName', businessName);
+        // fd.append('business_address', businessAddress);
+        fd.append('Email', emailAddress);
+        fd.append('Phone', phoneNum)
 
         if(!err){
-            // axios.defaults.headers = {
-            //     "Content-Type": "application/json",
-            //     Authorization: `Token ${this.props.token}`
-            // };
-           axios.post(`https://backend-entr.herokuapp.com/affiliate/add-to-list/`,fd)
+            axios.defaults.headers = {
+                "Content-Type": "application/json",
+                Authorization: `Token ${this.props.token}`
+            };
+           axios.post(`https://backend-entr.herokuapp.com/affiliate/edit-profile/`,fd)
             .then(res =>{
               this.props.history.push('/dashboard')
-            //   openNotification('Profile edited successfully')             
+              this.openNotification('Profile edited successfully')             
           })
         //   .catch(e =>{
         //     openNotification(e)
@@ -51,11 +60,10 @@ class AddUser extends Component {
     }
 
     render() {
-        console.log(this.props.token);
         return (
             <>
-            <SideNav />
-            <div className="main">
+              <SideNav />
+              <div className="main">
 
                 <div className="fluid-container">
 
@@ -63,7 +71,7 @@ class AddUser extends Component {
                   <div className="create-user-form">
                   <Form onFinish={this.handleSubmit}>
                     <Form.Item>
-                        <h1 style={{fontSize:23}} className="ant-form-text">Add a business to the pending list</h1>
+                        <h1 style={{fontSize:23}} className="ant-form-text">Edit Profile</h1>
                               </Form.Item>
 
                               <Form.Item name ="fName">
@@ -92,12 +100,12 @@ class AddUser extends Component {
                                   />
                               </Form.Item>
 
-                              <Form.Item name ='businessAddress'> 
+                              {/* <Form.Item name ='businessAddress'> 
                                   <Input
                                     placeholder="Business Address"
                                     enterButton
                                   />
-                              </Form.Item>
+                              </Form.Item> */}
 
                               <Form.Item name ='phoneNum'> 
                               
@@ -120,19 +128,26 @@ class AddUser extends Component {
 
                 </div>
 
-            </div>
+            </div>  
             </>
         )
     }
 }
 
+
 const mapStateToProps = state => {
     return {
       token: state.auth.token ,
+      isAuth: state.auth.token !== null,
+      affiliates: state.affiliates.affiliate_link    
     };
-  };
+};
   
-export default connect(
-    mapStateToProps,
-    null
-  )(AddUser);
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     affiliates: () => dispatch(handleGetCodes())    
+
+//   }
+// }
+
+export default connect(mapStateToProps, null)(MarketerProfile) 

@@ -12,7 +12,7 @@ import {MenuItem, MenuList} from '@material-ui/core'
 // import { faHamburger } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const host = 'http://127.0.0.1:8000'
+const host = 'https://backend-entr.herokuapp.com'
 
 class TempoaryDrawer extends React.Component{
     render(){
@@ -39,22 +39,22 @@ class TempoaryDrawer extends React.Component{
               </div>
           </MenuList>
 
-          {/* <MenuList>
+          <MenuList>
               <div  className = "menu-link">
                 <MenuItem 
                     className="menu-link-text"
-                    component={Link} to="/create-user" >
-                    Register a user
+                    component={Link} to="/pending-user-list" >
+                     Pending Business           
                 </MenuItem>
               </div>
-          </MenuList> */}
+          </MenuList>
 
           <MenuList>
               <div  className = "menu-link">
                 <MenuItem 
                     className="menu-link-text"
                     component={Link} to="/add-to-list" >
-                     Add user 
+                     Add a Business
                 </MenuItem>
               </div>
           </MenuList>
@@ -63,11 +63,22 @@ class TempoaryDrawer extends React.Component{
               <div  className = "menu-link">
                 <MenuItem 
                     className="menu-link-text"
-                    component={Link} to="/pending-user-list" >
-                     Pending Users
+                    component={Link} to="/profile" >
+                     Profile
                 </MenuItem>
               </div>
           </MenuList>
+
+          <MenuList>
+              <div  className = "menu-link">
+                <MenuItem 
+                    className="menu-link-text"
+                    component={Link} to="/referral-codes" >
+                     Referral Codes
+                </MenuItem>
+              </div>
+          </MenuList>
+
 
         </div>
 

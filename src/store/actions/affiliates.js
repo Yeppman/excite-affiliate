@@ -37,7 +37,7 @@ export const getAffliateUsersSucceess = data => {
 export const getAffliateUsers = () => {
   return dispatch => {
     dispatch(getAffliateUsersStart())
-    axios.get('http://127.0.0.1:8000/affiliate/get-affiliates/')
+    axios.get('https://backend-entr.herokuapp.com/affiliate/get-affiliates/')
     .then(res => {
       const user_list = res.data;
       dispatch(getAffliateUsersSucceess(user_list))
@@ -45,49 +45,66 @@ export const getAffliateUsers = () => {
   }
 }
 
-export const registerUser = (
-  username,
-  email,
-  password1,
-  password2,
-  is_buyer,
-  is_seller,
-  is_marketer,
-  affiliate_link
-) => {
+export const handleGetCodes = (token) => {
+
   return dispatch => {
-    dispatch(authStart());
-    const user = {
-      username,
-      email,
-      password1,
-      password2,
-      is_buyer,
-      is_seller: !is_buyer,
-      is_marketer: !is_buyer,
-      affiliate_link
+    dispatch(getAffliateUsersStart())
+    axios.defaults.headers = {
+      "Content-Type": "application/json",
+      Authorization: `Token ${token}`
     };
-    axios
-      .post("http://127.0.0.1:8000/rest-auth/registration/", user)
-      .then(res => {
-        const user = {
-          token: res.data.key,
-          username,
-          userId: res.data.user,
-          is_buyer,
-          is_seller: !is_buyer,
-          is_marketer: !is_buyer,
-          affiliate_link,
-          expirationDate: new Date(new Date().getTime() + 3600 * 1000)
-        };
-        // localStorage.setItem("user", JSON.stringify(user));
-        dispatch(authSuccess(user));
-        //dispatch(fetchCart())
-        dispatch(checkAuthTimeout(3600));
-      })
-      .catch(err => {
-        dispatch(authFail(err));
-      });
-  };
-};
+  axios.get('https://backend-entr.herokuapp.com/affiliate/get-ref-codes/').then(res =>{
+      if (res.status == 200){
+          const aff_users = res.data[0]
+          dispatch(getAffliateUsersSucceess(aff_users))
+      }
+  })
+  }
+}
+
+// export const registerUser = (
+//   username,
+//   email,
+//   password1,
+//   password2,
+//   is_buyer,
+//   is_seller,
+//   is_marketer,
+//   affiliate_link
+// ) => {
+//   return dispatch => {
+//     dispatch(authStart());
+//     const user = {
+//       username,
+//       email,
+//       password1,
+//       password2,
+//       is_buyer,
+//       is_seller: !is_buyer,
+//       is_marketer: !is_buyer,
+//       affiliate_link
+//     };
+//     axios
+//       .post("https://backend-entr.herokuapp.com/rest-auth/registration/", user)
+//       .then(res => {
+//         const user = {
+//           token: res.data.key,
+//           username,
+//           userId: res.data.user,
+//           is_buyer,
+//           is_seller: !is_buyer,
+//           is_marketer: !is_buyer,
+//           affiliate_link,
+//           expirationDate: new Date(new Date().getTime() + 3600 * 1000)
+//         };
+//         // localStorage.setItem("user", JSON.stringify(user));
+//         dispatch(authSuccess(user));
+//         //dispatch(fetchCart())
+//         dispatch(checkAuthTimeout(3600));
+//       })
+//       .catch(err => {
+//         dispatch(authFail(err));
+//       });
+//   };
+// };
 

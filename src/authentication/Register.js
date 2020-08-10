@@ -47,7 +47,7 @@ class RegistrationForm extends React.Component {
     };
     console.log(user);
     axios
-      .post('http://127.0.0.1:8000/rest-auth/registration/', user)
+      .post('https://backend-entr.herokuapp.com/rest-auth/registration/', user)
       .then(res => {
         const user = {
           token: res.data.key,

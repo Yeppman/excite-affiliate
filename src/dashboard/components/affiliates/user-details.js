@@ -17,7 +17,7 @@ class UserDetail extends Component {
             "Content-Type": "application/json",
             Authorization: `Token ${token}`
           };
-        axios.get(`http://127.0.0.1:8000/affiliate/get-user-detail/${this.affiliate_id}/1234/`)
+        axios.get(`https://backend-entr.herokuapp.com/affiliate/get-user-detail/${this.affiliate_id}/1234/`)
         .then(res =>{
            this.setState({
                data: res.data
